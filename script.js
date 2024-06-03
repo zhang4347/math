@@ -21,6 +21,11 @@ function addCalculationFields() {
         <input type="number" id="stopLossPrice${calculationCount}">
         <label for="lossPercentage${calculationCount}">最大虧損百分比</label>
         <select id="lossPercentage${calculationCount}">
+            <option value="0.03">0.03</option>
+            <option value="0.04">0.04</option>
+            <option value="0.05">0.05</option>
+            <option value="0.06">0.06</option>
+            <option value="0.07">0.07</option>
             <option value="0.08">0.08</option>
             <option value="0.09">0.09</option>
             <option value="0.10">0.10</option>
@@ -72,7 +77,7 @@ function calculateResults() {
         }
 
         results.innerHTML += `
-            <p>單號 ${i} (${resultType}): ${resultType}額: ${Math.abs(a).toFixed(2)}，目標${resultType}額: ${targetProfitOrLoss.toFixed(2)}，最大${resultType}額: ${maxLossOrProfit.toFixed(2)}，手數: ${lotSize.toFixed(2)}</p>
+            <p>單號 ${i} (${resultType}): ${resultType}額: ${Math.abs(a).toFixed(2)}，目標${resultType}額: ${targetProfitOrLoss.toFixed(2)}，最大虧損額: ${maxLossOrProfit.toFixed(2)}，手數: ${lotSize.toFixed(2)}</p>
         `;
     }
 
